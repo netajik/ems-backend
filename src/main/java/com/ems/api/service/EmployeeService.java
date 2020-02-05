@@ -10,9 +10,9 @@ public interface EmployeeService {
 	
 	public Employee updateEmployee(Integer id, Employee employee);
 	
-	public Employee getEmployee(Integer id); 
+	public Object getEmployee(Integer id); 
 	
-	public List<Object[]> getEmployees(); 
+	public List<Object>  getEmployees(); 
 	
 	public Object deleteEmployee(Integer id); 
 }

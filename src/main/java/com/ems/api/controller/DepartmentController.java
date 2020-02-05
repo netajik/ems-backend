@@ -30,7 +30,7 @@ public class DepartmentController {
 	}
 
 	@GetMapping(value = "/department/all")
-	public List<Department> getDepartments() {
+	public List<Object> getDepartments() {
 		log.debug("get departments controller started...");
 		return departmentService.getDepartments();
 	}

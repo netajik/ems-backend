@@ -8,5 +8,5 @@ public interface DepartmentService {
 	
 	public Department createDepartment(Department department);
 	
-	public List<Department> getDepartments();
+	public List<Object> getDepartments();
 }

@@ -50,7 +50,7 @@ public class Employee implements Serializable {
 
 	@Column(name = "created_by")
 	private Integer createdBy;
-	
+
 	@OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
 	private List<DepartmentEmployee> departmentEmployees;
 
@@ -135,5 +135,13 @@ public class Employee implements Serializable {
 
 	public void setCreatedBy(Integer createdBy) {
 		this.createdBy = createdBy;
+	}
+
+	public List<DepartmentEmployee> getDepartmentEmployees() {
+		return departmentEmployees;
+	}
+
+	public void setDepartmentEmployees(List<DepartmentEmployee> departmentEmployees) {
+		this.departmentEmployees = departmentEmployees;
 	}
 }

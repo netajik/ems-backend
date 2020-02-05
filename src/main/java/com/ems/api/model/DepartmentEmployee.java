@@ -26,7 +26,7 @@ public class DepartmentEmployee implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	@Column(name = "from_date")
 	private Date fromDate;
 
@@ -35,14 +35,14 @@ public class DepartmentEmployee implements Serializable {
 
 	@Column(name = "created_on")
 	private Date createdOn;
-	
+
 	@Column(name = "created_by")
 	private Integer createdBy;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "employee_id")
 	private Employee employee;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "department_id")
 	private Department department;
@@ -57,7 +57,7 @@ public class DepartmentEmployee implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
 	public Date getFromDate() {
 		return fromDate;
 	}
@@ -65,7 +65,7 @@ public class DepartmentEmployee implements Serializable {
 	public void setFromDate(Date fromDate) {
 		this.fromDate = fromDate;
 	}
-	
+
 	public Date getToDate() {
 		return toDate;
 	}
@@ -88,5 +88,21 @@ public class DepartmentEmployee implements Serializable {
 
 	public void setCreatedBy(Integer createdBy) {
 		this.createdBy = createdBy;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 }

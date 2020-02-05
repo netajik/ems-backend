@@ -25,15 +25,15 @@ public class Department implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
+
 	private String name;
-	
+
 	@Column(name = "created_on")
 	private Date createdOn;
-	
+
 	@Column(name = "created_by")
 	private Integer createdBy;
-	
+
 	@OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
 	private List<DepartmentEmployee> departmentEmployees;
 
@@ -70,5 +70,13 @@ public class Department implements Serializable {
 
 	public void setCreatedBy(Integer createdBy) {
 		this.createdBy = createdBy;
+	}
+
+	public List<DepartmentEmployee> getDepartmentEmployees() {
+		return departmentEmployees;
+	}
+
+	public void setDepartmentEmployees(List<DepartmentEmployee> departmentEmployees) {
+		this.departmentEmployees = departmentEmployees;
 	}
 }

@@ -53,15 +53,15 @@ public class DepartmentServiceImpl implements DepartmentService {
 	 * @return This method returns list of departments.
 	 */
 	@Override
-	public List<Department> getDepartments() {
+	public List<Object> getDepartments() {
 
 		Map<String, Object> response = new HashMap<String, Object>();
-		List<Department> departmentList = new ArrayList<Department>();
+		List<Object> departmentList = new ArrayList<Object>();
 		try {
-			departmentList = departmentRepository.findAll();
+			departmentList = departmentRepository.getDepartments();
 			response.put("status", "yes");
 		} catch (Exception e) {
-			log.error("error in get department");
+			log.error("error in getDepartments");
 			response.put("status", "no");
 		}
 		return departmentList;

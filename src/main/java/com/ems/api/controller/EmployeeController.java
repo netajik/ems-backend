@@ -43,13 +43,13 @@ public class EmployeeController {
 	}
 
 	@GetMapping(value = "/employee/{id}")
-	public ResponseEntity<Employee> getEmployee(@PathVariable(value = "id") Integer id) {
+	public ResponseEntity<Object> getEmployee(@PathVariable(value = "id") Integer id) {
 		log.debug("get employee controller started...");
 		return ResponseEntity.ok().body(employeeService.getEmployee(id));
 	}
 
 	@GetMapping(value = "/employee/all")
-	public List<Object[]> getEmployees() {
+	public List<Object> getEmployees() {
 		log.debug("get employees controller started... ");
 		return employeeService.getEmployees();
 	}

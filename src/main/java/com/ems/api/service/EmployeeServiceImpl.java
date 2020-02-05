@@ -69,12 +69,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee getEmployee(Integer id) {
+	public Object getEmployee(Integer id) {
 
 		Map<String, Object> response = new HashMap<String, Object>();
-		Employee employee = new Employee();
+		Object employee = new Object();
 		try {
-			employee = employeeRepository.getOne(id);
+			employee = employeeRepository.getEmployee(id);
 			if (employee == null) {
 				throw new Exception("Employee not found exception");
 			}
@@ -87,10 +87,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public List<Object[]> getEmployees() {
+	public List<Object>  getEmployees() {
 
 		Map<String, Object> response = new HashMap<String, Object>();
-		List<Object[]> employeeList = new ArrayList<Object[]>();
+		List<Object>  employeeList = new ArrayList<Object>();
 		try {
 			employeeList = employeeRepository.getEmployees();
 			response.put("status", "yes");
